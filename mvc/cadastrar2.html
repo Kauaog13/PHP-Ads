@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Clientes</title>
+    <style type="text/css">
+        .style1 {
+            color: #FF0000;
+            font-size: x-small;
+        }
+        .style3 {
+            color: #0000FF;
+            font-size: x-small;
+        }
+        /* Responsividade */
+        @media (max-width: 600px) {
+            form {
+                width: 100%;
+                padding: 10px;
+            }
+            table {
+                width: 100%;
+            }
+            td {
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        function validaCampo() {
+            // Validação de campos
+            if (document.cadastro.nome.value == "") {
+                alert("O Campo nome é obrigatório!");
+                return false;
+            } else if (document.cadastro.email.value == "") {
+                alert("O Campo email é obrigatório!");
+                return false;
+            } else if (document.cadastro.endereco.value == "") {
+                alert("O Campo endereço é obrigatório!");
+                return false;
+            } else if (document.cadastro.cidade.value == "") {
+                alert("O Campo Cidade é obrigatório!");
+                return false;
+            } else if (document.cadastro.estado.value == "") {
+                alert("O Campo Estado é obrigatório!");
+                return false;
+            } else if (document.cadastro.bairro.value == "") {
+                alert("O Campo Bairro é obrigatório!");
+                return false;
+            } else if (document.cadastro.pais.value == "") {
+                alert("O Campo País é obrigatório!");
+                return false;
+            } else if (document.cadastro.login.value == "") {
+                alert("O Campo Login é obrigatório!");
+                return false;
+            } else if (document.cadastro.senha.value == "") {
+                alert("Digite uma senha!");
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="cadastro" name="cadastro" method="post" action="cadastro.php" onsubmit="return validaCampo();">
+        <table>
+            <tr>
+                <td><label for="nome">Nome:</label></td>
+                <td><input name="nome" type="text" id="nome" size="70" maxlength="60" />
+                    <span class="style1">*</span></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input name="email" type="email" id="email" size="70" maxlength="60" />
+                    <span class="style1">*</span></td>
+            </tr>
+            <tr>
+                <td><label>Sexo:</label></td>
+                <td>
+                    <input name="sexo" type="radio" value="Masculino" checked="checked" /> Masculino
+                    <input name="sexo" type="radio" value="Feminino" /> Feminino
+                    <span class="style1">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="ddd">DDD:</label></td>
+                <td><input name="ddd" type="text" id="ddd" size="4" maxlength="2" />
+                    Telefone: <input name="telefone" type="text" id="telefone" />
+                    <span class="style3">Apenas números</span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="endereco">Endereço:</label></td>
+                <td><input name="endereco" type="text" id="endereco" size="70" maxlength="70" />
+                    <span class="style1">*</span></td>
+            </tr>
+            <tr>
+                <td><label for="cidade">Cidade:</label></td>
+                <td><input name="cidade" type="text" id="cidade" maxlength="20" />
+                    <span class="style1">*</span></td>
+            </tr>
+            <tr>
+                <td><label for="estado">Estado:</label></td>
+                <td>
+                    <select name="estado" id="estado">
+                        <option value="">Selecione...</option>
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="ES">ES</option>
+                        <option value="DF">DF</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                    </select>
+                    <span class="style1">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="bairro">Bairro:</label></td>
+                <td><input name="bairro" type="text" id="bairro" maxlength="20" />
+                    <span class="style1">*</span></td>
+            </tr>
+            <tr>
+                <td><label for="pais">País:</label></td>
+                <td><input name="pais" type="text" id="pais" maxlength="20" />
+                    <span class="style1">*</span></td>
+            </tr>
+            <tr>
+                <td><label for="login">Login:</label></td>
+                <td><input name="login" type="text" id="login" maxlength="12" />
+                    <span class="style1">*</span></td>
+            </tr>
+            <tr>
+                <td><label for="senha">Senha:</label></td>
+                <td><input name="senha" type="password" id="senha" maxlength="20" />
+                    <span class="style1">*</span></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Cadastrar" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
